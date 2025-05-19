@@ -77,8 +77,14 @@ submitButton.addEventListener('click', () => {
         body: JSON.stringify(data)
     })
     .then(response => response.text())
-    .then(message => {
-        output.textContent = message; // Shows response from backend
+    .then(async response => {
+    if (response.redirected) {
+        output.textContent = 'You are not logged in. Please log in first.';
+        window.location.href = response.url;
+        return;
+    }
+    const message = await response.text();
+    output.textContent = message;
         inputElement.value = '';
         loadComments();
     })
