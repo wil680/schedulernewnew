@@ -69,7 +69,7 @@ submitButton.addEventListener('click', () => {
         attendance: attendance
     };
 
-    fetch('http://localhost:3000/submit', {
+    fetch('/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -89,7 +89,7 @@ submitButton.addEventListener('click', () => {
 });
 
 function loadComments() {
-    fetch('http://localhost:3000/data')
+    fetch('/data')
         .then(response => response.json())
         .then(comments => {
             for (const day in comments) {
@@ -111,7 +111,7 @@ function loadComments() {
 const clearButton = document.getElementById('clearButton');
 
 clearButton.addEventListener('click', () => {
-  fetch('http://localhost:3000/clear', {
+  fetch('/clear', {
     method: 'POST'
   })
   .then(res => res.text())
@@ -172,7 +172,7 @@ function generateMonthlyCalendar(month, year) {
 }
 
 function loadDayDetails(day) {
-  fetch('http://localhost:3000/data')
+  fetch('/data')
     .then(res => res.json())
     .then(data => {
       const list = document.getElementById('commentList');
