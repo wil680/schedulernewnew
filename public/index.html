@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sandbox</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+</head>
+<body>
+    <h1>Scheduler</h1>
+    
+    <div class="calendar-wrapper">
+        <div class="day-labels">
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
+        </div>
+        <div class="container" id="container">
+
+            <div class="column" data-day="monday">
+                <h3>Monday</h3>
+                <div class="outputBox" id="monday-box">none</div>
+            </div>
+            <div class="column" data-day="tuesday">
+                <h3>Tuesday</h3>
+                <div class="outputBox" id="tuesday-box">none</div>
+            </div>
+            <div class="column" data-day="wednesday">
+                <h3>Wednesday</h3>
+                <div class="outputBox" id="wednesday-box">none</div>
+            </div>
+            <div class="column" data-day="thursday">
+                <h3>Thursday</h3>
+                <div class="outputBox" id="thursday-box">none</div>
+            </div>
+            <div class="column" data-day="friday">
+                <h3>Friday</h3>
+                <div class="outputBox" id="friday-box">none</div>
+            </div>
+            <div class="column" data-day="saturday">
+                <h3>Saturday</h3>
+                <div class="outputBox" id="saturday-box">none</div>
+            </div>
+            <div class="column" data-day="sunday">
+                <h3>Sunday</h3>
+                <div class="outputBox" id="sunday-box">none</div>
+            </div>
+    </div>  
+</div>
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">Add a Comment!</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+
+        <div class="modal-tabs">
+            <button class="tab-button active" data-tab="viewTab">View Comments</button>
+            <button class="tab-button" data-tab="addTab">Add Comments</button>
+        </div>
+
+        <div class="modal-body">
+
+            <div id="viewTab" class="tab-content active">
+                <div id="commentList"></div>
+            </div>
+
+            <div id="addTab" class="tab-content">
+            <label for="attendanceSlider">Attendance:</label>
+            <input type="range" id="attendanceSlider" name="attendance" min="0" max="2" step="1" value="1">
+            <div class="slider-labels">
+                <span>Not Attending</span>
+                <span>Don't know</span>
+                <span>Attending</span>
+            </div>
+            <label>Comments:</label>
+            <input type="text" id="userInput" name="comment" placeholder="Enter your comment">
+            <button id="submitButton">Submit</button>
+            <div id="output"></div>
+        </div>
+    </div>
+</div>
+    
+    <div></div><button id="clearButton" class="openButton">Clear All</button></div>
+    <div id="overlay"></div>
+</body>
+</html>
